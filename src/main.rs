@@ -1,6 +1,7 @@
 extern crate hyper;
 use hyper::Client;
 use std::io::Read;
+use select::document::Document;
 
 
 fn main() {
@@ -12,4 +13,7 @@ fn main() {
     let mut body = String::new();
     res.read_to_string(&mut body).expect("Read failed");
     println!("{:?}", body);
+
+    let document = Document::from(body.as_str());
+    println!("doc = {:#?}", document);
 }
