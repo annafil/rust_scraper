@@ -1,4 +1,5 @@
 extern crate hyper;
+extern crate select;
 use hyper::Client;
 use std::io::Read;
 use select::document::Document;
